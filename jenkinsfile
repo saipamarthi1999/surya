@@ -1,27 +1,29 @@
-pipeline{
-  stages{
+pipeline {
+  agent any
+
+  stages {
     stage('Clone code') {
-      steps{
-       echo "Cloning the repository...."
-}
-}
+      steps {
+        echo "Cloning the repository...."
+      }
+    }
     stage('Build') {
-      steps{
-      echo "Running build test..."
-       sh "echo Build project..."
-   }
-}
-     stage('Test') {
-      steps{
+      steps {
+        echo "Running build test..."
+        sh "echo Build project..."
+      }
+    }
+    stage('Test') {
+      steps {
         echo "Running test..."
-         sh "echo Running unit test..."
-}
-}
-     stage('deploy') {
-      steps{
-       echo "Deploying the application..."
-         sh "echo Deploy to staging environment..."
-}
-}
-}
+        sh "echo Running unit test..."
+      }
+    }
+    stage('Deploy') {
+      steps {
+        echo "Deploying the application..."
+        sh "echo Deploy to staging environment..."
+      }
+    }
+  }
 }
