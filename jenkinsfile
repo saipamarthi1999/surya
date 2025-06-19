@@ -1,0 +1,27 @@
+pipeline{
+  stages{
+    stage('Clone code') {
+      steps{
+       echo "Cloning the repository...."
+}
+}
+    stage('Build') {
+      steps{
+      echo "Running build test..."
+       sh "echo Build project..."
+   }
+}
+     stage('Test') {
+      steps{
+        echo "Running test..."
+         sh "echo Running unit test..."
+}
+}
+     stage('deploy') {
+      steps{
+       echo "Deploying the application..."
+         sh "echo Deploy to staging environment..."
+}
+}
+}
+}
